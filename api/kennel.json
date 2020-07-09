@@ -1,0 +1,33 @@
+{
+    "animals": [
+        { "id": 1, "name": "Doodles", "breed": "Poodle", "picture": "./AnimalImages/Toy-Poodle.jpg"},
+        { "id": 2, "name": "Decker", "breed": "German Shepherd", "picture": "./AnimalImages/German-Shepherd.jpeg"},
+        { "id": 3, "name": "Esme", "breed": "Pitbull", "picture": "./AnimalImages/Pitbull.jpg"}
+    ],
+
+    "locations": [
+        { "id": 1, "name": "Nashville North Location", "address": "500 Puppy Way", "city" : "Gallatin", "state": "TN" },
+
+        { "id": 2, "name": "Nashville East Location", "address": "123 Yappy Lane", "city" : "Mt. Juliet", "state": "TN" },
+
+        { "id": 3, "name": "Nashville South Location", "address": "615 Waggy Tail Road", "city" : "Brentwood", "state": "TN" },
+
+        { "id": 4, "name": "Nashville West Location", "address": "808 Fetch Street", "city" : "Bellevue", "state": "TN" }
+
+    ],
+
+    "employees": [
+        { "id": 1, "name": "Poppy Smith", "position": "Receptionist", "picture": "./EmployeeImages/Poppy-Smith.jpeg" },
+
+        { "id": 2, "name": "Rayne Shephard", "position": "Vet Tech", "picture": "./EmployeeImages/Rayne-Shephard.jpg"},
+
+        { "id": 3, "name": "Hazel Buchanon", "position": "Dog Walker", "picture": "./EmployeeImages/Hazel-Buchanon.jpg" }
+
+    ],
+
+    "owner": [
+        { "id": 1, "name": "Finley Tate", "phoneNumber": "615-123-4567", "picture": "./OwnerImages/Finley-Tate.jpg"}
+    ]
+
+
+}
