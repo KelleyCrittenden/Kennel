@@ -18,6 +18,11 @@ const EmployeeList = () => {
     });
   };
 
+  const deleteEmployee = id => {
+    EmployeeManager.delete(id)
+      .then(() => EmployeeManager.getAll().then(setEmployees));
+  };
+
   // got the animals from the API on the component's first render
   // react hook function what happens when a change is made to state
   useEffect(() => {
@@ -27,7 +32,12 @@ const EmployeeList = () => {
   // Finally we use map() to "loop over" the animals array to show a list of animal cards
   return (
     <div className="container-cards">
-      {employees.map(employee => <EmployeeCard key={employee.id} employee={employee} id={employee.id}/>)}
+      {employees.map(employee => <EmployeeCard 
+                                  key={employee.id} 
+                                  employee={employee} 
+                                  id={employee.id}
+                                  deleteEmployee={deleteEmployee} 
+                                  />)}
     </div>
   );
 };

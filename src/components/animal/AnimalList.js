@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-//import the components we will need
 import AnimalCard from './AnimalCard';
 import AnimalManager from '../../modules/AnimalManager';
 
@@ -18,6 +17,11 @@ const AnimalList = () => {
     });
   };
 
+  const deleteAnimal = id => {
+    AnimalManager.delete(id)
+      .then(() => AnimalManager.getAll().then(setAnimals));
+  };
+
   // got the animals from the API on the component's first render
   // react hook function what happens when a change is made to state
   useEffect(() => {
@@ -27,8 +31,14 @@ const AnimalList = () => {
   // Finally we use map() to "loop over" the animals array to show a list of animal cards
   return (
     <div className="container-cards">
-      {animals.map(animal => <AnimalCard key={animal.id} animal={animal} id={animal.id}/>)}
+      {animals.map(animal => <AnimalCard 
+                              key={animal.id} 
+                              animal={animal} 
+                              id={animal.id}
+                              deleteAnimal={deleteAnimal} />)}
     </div>
   );
+  
 };
+
 export default AnimalList

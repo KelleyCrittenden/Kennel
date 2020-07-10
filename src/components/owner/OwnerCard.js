@@ -8,7 +8,7 @@ const OwnerCard = (props) => {
     <div className="card">
       <div className="card-content">
       <picture>
-          <img src={require (`${props.owner.picture}`)} alt="My Dog" />
+          <img className="ownerImage" src={require (`${props.owner.picture}`)} alt="My Dog" />
         </picture>
           
         <h3>
@@ -18,9 +18,11 @@ const OwnerCard = (props) => {
         <p>Phone Number: {props.owner.phoneNumber}
         </p>
 
+        <button type="button" onClick={() => props.deleteOwner(props.owner.id)}>Delete</button>
+
       </div>
     </div>
   );
 };
 
-export default OwnerCard;
+export default OwnerCard; 

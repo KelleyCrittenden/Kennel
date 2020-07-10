@@ -39,7 +39,7 @@ const NavBar = () => {
 
             <li>
               <Link className="nav-link" to="/owner">
-              Owner
+              Owners
               </Link>
             </li>
 
