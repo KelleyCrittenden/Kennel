@@ -16,8 +16,8 @@ const EmployeeCard = (props) => {
         <p>Position: {props.employee.position}
         </p>
 
-        <button type="button" onClick={() => props.deleteEmployee(props.employee.id)}>Fire</button>
-        
+        <button type="button" onClick={() => props.deleteEmployee(props.employee.id)}>Terminate</button>
+
       </div>
     </div>
   );

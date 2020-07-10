@@ -1,5 +1,6 @@
 import React from "react";
 import "./Location.css";
+import { Link } from "react-router-dom";
 
 //create a card that pulls specific data from the database
 
@@ -21,7 +22,11 @@ const LocationCard = (props) => {
         <p>State: {props.location.state}
         </p>
 
+        <Link to={`/locations/${props.location.id}`}>
+          <button>Details</button>
+
         <button type="button" onClick={() => props.deleteLocation(props.location.id)}>Close Location</button>
+        </Link>
 
       </div>
     </div>
