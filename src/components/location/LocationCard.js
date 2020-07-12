@@ -13,15 +13,6 @@ const LocationCard = (props) => {
           <span className="card-locationName">{props.location.name}</span>
         </h3>
 
-        <p>Address: {props.location.address}
-        </p>
-
-        <p>City: {props.location.city}
-        </p>
-
-        <p>State: {props.location.state}
-        </p>
-
         <Link to={`/locations/${props.location.id}`}>
           <button>Details</button>
 

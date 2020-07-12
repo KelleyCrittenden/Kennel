@@ -1,17 +1,27 @@
 import { Route } from "react-router-dom";
 import React from "react";
 import Home from "./home/Home";
+
 import AnimalList from "./animal/AnimalList";
-import LocationList from "./location/LocationList";
-import EmployeeList from "./employee/EmployeeList";
-import OwnerList from "./owner/OwnerList";
 import AnimalDetail from "./animal/AnimalDetail";
+import AnimalForm from './animal/AnimalForm'
+
+import EmployeeList from "./employee/EmployeeList";
+import EmployeeDetail from "./employee/EmployeeDetail";
+import EmployeeForm from './employee/EmployeeForm';
+
+import OwnerList from "./owner/OwnerList";
+
+import LocationList from "./location/LocationList";
 import LocationDetail from "./location/LocationDetail";
+
+
 
 
 const ApplicationViews = () => {
   return (
     <React.Fragment>
+
       <Route
         exact
         path="/"
@@ -24,7 +34,7 @@ const ApplicationViews = () => {
         exact
         path="/animals"
         render={props => {
-          return <AnimalList />;
+          return <AnimalList {...props}/>;
         }}
       />
 
@@ -32,38 +42,73 @@ const ApplicationViews = () => {
       exact
       path="/locations"
       render={props => {
-          return <LocationList />;
+          return <LocationList {...props}/>;
       }}
       />
 
     <Route
-      path="/employee"
+      exact
+      path="/employees"
       render={props => {
-          return <EmployeeList />;
+          return <EmployeeList {...props}/>;
       }}
-      />
+    />
 
     <Route
+      exact
       path="/owner"
       render={props => {
-          return <OwnerList />;
+          return <OwnerList {...props}/>;
       }}
       />
 
     <Route 
+        //change URL to match location id for bookmarking single animal
       path="/animals/:animalId(\d+)" 
       render={(props) => {
             // Pass the animalId to the AnimalDetailComponent
-          return <AnimalDetail animalId={parseInt(props.match.params.animalId)}/>
+          return <AnimalDetail animalId={parseInt
+            (props.match.params.animalId)} {...props}/>
         }} 
     />
 
     <Route 
+        //change URL to match location id for bookmarking single location
       path="/locations/:locationId(\d+)" 
       render={(props) => {
-          return <LocationDetail locationId={parseInt(props.match.params.locationId)}/>
+          return <LocationDetail locationId={parseInt
+            (props.match.params.locationId)} {...props}/>
         }} 
     />
+    
+    
+    <Route 
+        //change URL to match location id for bookmarking single employee
+      path="/employees/:employeeId(\d+)" 
+      render={(props) => {
+            // Pass the employeeId to the EmployeeDetailComponent
+          return <EmployeeDetail employeeId={parseInt
+            (props.match.params.employeeId)} {...props}/>
+        }} 
+    />
+
+    <Route 
+          // Route for new animal form
+      path="/animals/new" 
+      render={(props) => {
+        return <AnimalForm {...props} />
+        }} 
+    />
+
+
+    <Route 
+          // Route for new employee form
+      path="/employees/new" 
+      render={(props) => {
+      return <EmployeeForm {...props} />
+        }} 
+    />
+
 
     </React.Fragment>
   );

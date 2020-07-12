@@ -4,6 +4,7 @@ import './LocationDetail.css'
 
 const LocationDetail = props => {
   const [location, setLocation] = useState({ name: "", address: "" , city: "", state: ""});
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     //get(id) from LocationManager and hang on to the data; put it into state
@@ -15,8 +16,16 @@ const LocationDetail = props => {
           city: location.city,
           state: location.state
         });
+        setIsLoading(false);
       });
   }, [props.locationId]);
+
+  const handleDelete = () => {
+    setIsLoading(true);
+    LocationManager.delete(props.locationId).then(() =>
+      props.history.push("/locations")
+    );
+  };
 
   return (
         <div className="card">
@@ -34,6 +43,10 @@ const LocationDetail = props => {
 
                 <p>State: {location.state}
                 </p>
+
+                <button type="button" disabled={isLoading} onClick={handleDelete}>
+                Close Location
+                </button>
 
             </div>
         </div>
