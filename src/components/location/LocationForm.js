@@ -1,31 +1,31 @@
 import React, { useState } from 'react';
-import EmployeeManager from '../../modules/EmployeeManager';
-import './EmployeeForm.css'
+import LocationManager from '../../modules/LocationManager';
+import './LocationForm.css'
 
-const EmployeeForm = props => {
-  const [employee, setEmployee] = useState({ name: "", position: "", picture: "./employee.jpg"});
+const LocationForm = props => {
+  const [location, setLocation] = useState({ name: "", position: "", picture: "./location.jpg"});
   const [isLoading, setIsLoading] = useState(false);
 
             // An Event that everytime a charector is entered into an input field it is stored into the state of this object, and sets a new state
   const handleFieldChange = evt => {
-    const stateToChange = { ...employee };
+    const stateToChange = { ...location };
     stateToChange[evt.target.id] = evt.target.value;
-    setEmployee(stateToChange);
+    setLocation(stateToChange);
   };
 
             /*  Local method for validation, set loadingStatus, create animal object, invoke the AnimalManager post method, and redirect to the full animal list
             */
 
             //window alert for empty input fields
-  const constructNewEmployee = evt => {
+  const constructNewLocation = evt => {
     evt.preventDefault();
-    if (employee.name === "" || employee.position === "") {
-      window.alert("Please input employee name and postition");
+    if (location.name === "" || location.address === "" || location.city === "" || location.state === "") {
+      window.alert("Please input location name, address, city and state");
     } else {
       setIsLoading(true);
             // Create the employee and redirect user to employee list
-            EmployeeManager.post(employee)
-        .then(() => props.history.push("/employees"));
+            LocationManager.post(location)
+        .then(() => props.history.push("/locations"));
     }
   };
 
@@ -40,7 +40,7 @@ const EmployeeForm = props => {
               required
               onChange={handleFieldChange}
               id="name"
-              placeholder="Employee name"
+              placeholder="Location Name"
             />
 
             <label htmlFor="name">Name</label>
@@ -49,11 +49,31 @@ const EmployeeForm = props => {
               type="text"
               required
               onChange={handleFieldChange}
-              id="position"
-              placeholder="Position"
+              id="address"
+              placeholder="Location Address"
             />
 
-            <label htmlFor="position">Position</label>
+            <label htmlFor="address">Address</label>
+
+            <input
+              type="text"
+              required
+              onChange={handleFieldChange}
+              id="city"
+              placeholder="Location City"
+            />
+
+            <label htmlFor="city">City</label>
+
+            <input
+              type="text"
+              required
+              onChange={handleFieldChange}
+              id="state"
+              placeholder="Location State"
+            />
+
+            <label htmlFor="state">State</label>
 
           </div>
 
@@ -61,7 +81,7 @@ const EmployeeForm = props => {
             <button
               type="button"
               disabled={isLoading}
-              onClick={constructNewEmployee}>Add Employee
+              onClick={constructNewLocation}>Add Location
             </button>
           </div>
           
@@ -71,4 +91,4 @@ const EmployeeForm = props => {
   );
 };
 
-export default EmployeeForm
+export default LocationForm

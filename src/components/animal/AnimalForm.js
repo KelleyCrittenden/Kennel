@@ -42,6 +42,7 @@ const AnimalForm = props => {
             />
 
             <label htmlFor="name">Name</label>
+
             <input
               type="text"
               required
@@ -49,7 +50,9 @@ const AnimalForm = props => {
               id="breed"
               placeholder="Breed"
             />
+
             <label htmlFor="breed">Breed</label>
+            
           </div>
 
           <div className="alignRight">
@@ -59,7 +62,7 @@ const AnimalForm = props => {
               onClick={constructNewAnimal}>Submit
             </button>
           </div>
-          
+
         </fieldset>
       </form>
     </>

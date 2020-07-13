@@ -7,10 +7,12 @@
   margin-bottom: 2em;
   flex: 0 1 24%;
   width: 25%;
+  justify-content: center;
 }
 
 .card-content {
   padding: .5em;
+  justify-content: center;
 }
 
 .card-content h3 {

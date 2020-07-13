@@ -36,7 +36,7 @@ const EmployeeList = (props) => {
       <button type="button"
         className="btn"
         onClick={() => {props.history.push("/employees/new")}}>
-        Hire Employee
+        Add New Employee
      </button>
     </section>
     

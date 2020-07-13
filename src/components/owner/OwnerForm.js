@@ -1,31 +1,31 @@
 import React, { useState } from 'react';
-import EmployeeManager from '../../modules/EmployeeManager';
-import './EmployeeForm.css'
+import OwnerManager from '../../modules/OwnerManager';
+import './OwnerForm.css'
 
-const EmployeeForm = props => {
-  const [employee, setEmployee] = useState({ name: "", position: "", picture: "./employee.jpg"});
+const OwnerForm = props => {
+  const [owner, setOwner] = useState({ name: "", phoneNumber: "", picture: "./owner.jpg"});
   const [isLoading, setIsLoading] = useState(false);
 
             // An Event that everytime a charector is entered into an input field it is stored into the state of this object, and sets a new state
   const handleFieldChange = evt => {
-    const stateToChange = { ...employee };
+    const stateToChange = { ...owner };
     stateToChange[evt.target.id] = evt.target.value;
-    setEmployee(stateToChange);
+    setOwner(stateToChange);
   };
 
             /*  Local method for validation, set loadingStatus, create animal object, invoke the AnimalManager post method, and redirect to the full animal list
             */
 
             //window alert for empty input fields
-  const constructNewEmployee = evt => {
+  const constructNewOwner = evt => {
     evt.preventDefault();
-    if (employee.name === "" || employee.position === "") {
-      window.alert("Please input employee name and postition");
+    if (owner.name === "" || owner.phoneNumber === "") {
+      window.alert("Please input owner name and phone number");
     } else {
       setIsLoading(true);
             // Create the employee and redirect user to employee list
-            EmployeeManager.post(employee)
-        .then(() => props.history.push("/employees"));
+            OwnerManager.post(owner)
+        .then(() => props.history.push("/owners"));
     }
   };
 
@@ -40,7 +40,7 @@ const EmployeeForm = props => {
               required
               onChange={handleFieldChange}
               id="name"
-              placeholder="Employee name"
+              placeholder="Owner Name"
             />
 
             <label htmlFor="name">Name</label>
@@ -49,11 +49,11 @@ const EmployeeForm = props => {
               type="text"
               required
               onChange={handleFieldChange}
-              id="position"
-              placeholder="Position"
+              id="phoneNumber"
+              placeholder="Phone Number"
             />
 
-            <label htmlFor="position">Position</label>
+            <label htmlFor="phoneNumber">Phone Number</label>
 
           </div>
 
@@ -61,7 +61,7 @@ const EmployeeForm = props => {
             <button
               type="button"
               disabled={isLoading}
-              onClick={constructNewEmployee}>Add Employee
+              onClick={constructNewOwner}>Submit
             </button>
           </div>
           
@@ -71,4 +71,4 @@ const EmployeeForm = props => {
   );
 };
 
-export default EmployeeForm
+export default OwnerForm

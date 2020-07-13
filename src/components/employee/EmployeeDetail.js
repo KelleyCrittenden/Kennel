@@ -18,12 +18,13 @@ const EmployeeDetail = props => {
           //3. looks at state and runs return again
   useEffect(() => {
           //get(id) from AnimalManager and hang on to the data; put it into state
-          EmployeeManager.get(props.employeeId).then(employee => {
-      setEmployee({
-        name: employee.name,
-        position: employee.position,
-        picture: employee.picture
-      });
+          EmployeeManager.get(props.employeeId)
+          .then(employee => {
+            setEmployee({
+                name: employee.name,
+                position: employee.position,
+                picture: employee.picture
+            });
       setIsLoading(false);
           });
       }, [props.employeeId]);
@@ -53,10 +54,10 @@ const EmployeeDetail = props => {
           <span style={{ color: "darkslategrey" }}>{firstLetterCase(employee.name)}</span>
         </h3>
 
-        <p>Position: {employee.breed}</p>
+        <p>Position: {employee.position}</p>
 
         <button type="button" disabled={isLoading} onClick={handleDelete}>
-          Discharge
+          Terminate
         </button>
 
       </div>

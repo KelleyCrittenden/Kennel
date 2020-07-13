@@ -2,12 +2,17 @@ import React, { useState, useEffect } from 'react';
 import LocationCard from './LocationCard';
 import LocationManager from '../../modules/LocationManager';
 
-const LocationList = () => {
 
+const LocationList = (props) => {
+  // The initial state is an empty array
+  //   what I'm keeping track of, then what function using to update the state of the itme I'm keepting track of
   const [locations, setLocations] = useState([]);
 
 
+//getting all the animals from the API
   const getLocations = () => {
+    // After the data comes back from the API, we
+    //  use the setAnimals function to update state
     return LocationManager.getAll().then(locationsFromAPI => {
       setLocations(locationsFromAPI)
     });
@@ -18,19 +23,33 @@ const LocationList = () => {
       .then(() => LocationManager.getAll().then(setLocations));
   };
 
+      // got the animals from the API on the component's first render
+      // react hook function what happens when a change is made to state
   useEffect(() => {
     getLocations();
   }, []);
 
- 
+      // Finally we use map() to "loop over" the animals array to show a list of animal cards
   return (
+    <>
+    <section className="section-content">
+      <button type="button"
+        className="btn"
+        onClick={() => {props.history.push("/locations/new")}}>
+        Add New Location
+     </button>
+    </section>
+    
     <div className="container-cards">
       {locations.map(location => <LocationCard 
-                                  key={location.id} 
-                                  location={location} 
-                                  id={location.id}
-                                  deleteLocation={deleteLocation} />)}
+                              key={location.id} 
+                              location={location} 
+                              id={location.id}
+                              deleteLocation={deleteLocation} />)}
     </div>
+    </>
   );
+  
 };
+
 export default LocationList

@@ -25,21 +25,30 @@
       "name": "Nashville North Location",
       "address": "500 Puppy Way",
       "city": "Gallatin",
-      "state": "TN"
+      "state": "TN",
+      "picture": "./LocationImages/NashvilleNorthLocation.jpg"
     },
     {
-      "id": 3,
-      "name": "Nashville South Location",
-      "address": "615 Waggy Tail Road",
-      "city": "Brentwood",
-      "state": "TN"
+      "id": 2,
+      "name": "Nashville East Location",
+      "address": "123 Yappy Lane",
+      "city": "Mt. Juliet",
+      "state": "TN",
+      "picture": "./LocationImages/NashvilleEastLocation.jpeg"
     },
     {
       "id": 4,
       "name": "Nashville West Location",
       "address": "808 Fetch Street",
       "city": "Bellevue",
-      "state": "TN"
+      "state": "TN",
+      "picture": "./LocationImages/NashvilleWestLocation.jpeg"
+    },
+    {
+      "name": "asdf",
+      "position": "",
+      "picture": "./location.jpg",
+      "id": 5
     }
   ],
   "employees": [
@@ -60,15 +69,9 @@
       "name": "Hazel Buchanon",
       "position": "Dog Walker",
       "picture": "./EmployeeImages/Hazel-Buchanon.jpg"
-    },
-    {
-      "name": "Kelley Crittenden",
-      "position": "Groomer",
-      "picture": "./employee.jpg",
-      "id": 4
     }
   ],
-  "owner": [
+  "owners": [
     {
       "id": 1,
       "name": "Finley Tate",
@@ -76,16 +79,10 @@
       "picture": "./OwnerImages/Finley-Tate.jpg"
     },
     {
-      "id": 2,
-      "name": "William Brown",
-      "phoneNumber": "615-987-6543",
-      "picture": "./OwnerImages/William-Brown.jpg"
-    },
-    {
-      "id": 3,
-      "name": "Brian Green",
-      "phoneNumber": "615-654-3210",
-      "picture": "./OwnerImages/Brian-Green.jpg"
+      "name": "asdf",
+      "phoneNumber": "asdf",
+      "picture": "./owner.jpg",
+      "id": 2
     }
   ]
 }

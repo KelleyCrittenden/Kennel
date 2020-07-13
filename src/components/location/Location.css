@@ -47,3 +47,9 @@
   background-color: darkblue;
   width: 100%;
 }
+
+.locationImage {
+  border-radius: 50%;
+  width: 100%;
+
+}

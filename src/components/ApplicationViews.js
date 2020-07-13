@@ -11,9 +11,12 @@ import EmployeeDetail from "./employee/EmployeeDetail";
 import EmployeeForm from './employee/EmployeeForm';
 
 import OwnerList from "./owner/OwnerList";
+import OwnerDetail from "./owner/OwnerDetail";
+import OwnerForm from "./owner/OwnerForm";
 
 import LocationList from "./location/LocationList";
 import LocationDetail from "./location/LocationDetail";
+import LocationForm from "./location/LocationForm";
 
 
 
@@ -39,11 +42,11 @@ const ApplicationViews = () => {
       />
 
       <Route
-      exact
-      path="/locations"
-      render={props => {
+        exact
+        path="/locations"
+        render={props => {
           return <LocationList {...props}/>;
-      }}
+        }}
       />
 
     <Route
@@ -56,7 +59,7 @@ const ApplicationViews = () => {
 
     <Route
       exact
-      path="/owner"
+      path="/owners"
       render={props => {
           return <OwnerList {...props}/>;
       }}
@@ -93,6 +96,16 @@ const ApplicationViews = () => {
     />
 
     <Route 
+        //change URL to match location id for bookmarking single employee
+      path="/owners/:ownerId(\d+)" 
+      render={(props) => {
+            // Pass the employeeId to the EmployeeDetailComponent
+          return <OwnerDetail ownerId={parseInt
+            (props.match.params.ownerId)} {...props}/>
+        }} 
+    />
+
+    <Route 
           // Route for new animal form
       path="/animals/new" 
       render={(props) => {
@@ -106,6 +119,22 @@ const ApplicationViews = () => {
       path="/employees/new" 
       render={(props) => {
       return <EmployeeForm {...props} />
+        }} 
+    />
+
+    <Route 
+          // Route for new owner form
+      path="/owners/new" 
+      render={(props) => {
+      return <OwnerForm {...props} />
+        }} 
+    />
+
+    <Route 
+          // Route for new owner form
+      path="/locations/new" 
+      render={(props) => {
+      return <LocationForm {...props} />
         }} 
     />
 
