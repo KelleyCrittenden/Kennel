@@ -23,32 +23,18 @@
     {
       "id": 1,
       "name": "Nashville North Location",
-      "address": "500 Puppy Way",
+      "address": "500 Puppy Lane",
       "city": "Gallatin",
       "state": "TN",
       "picture": "./LocationImages/NashvilleNorthLocation.jpg"
     },
     {
       "id": 2,
-      "name": "Nashville East Location",
-      "address": "123 Yappy Lane",
-      "city": "Mt. Juliet",
+      "name": "Kelley Crittenden",
+      "address": "1640 Spencer Mill  Road",
+      "city": "Burns",
       "state": "TN",
-      "picture": "./LocationImages/NashvilleEastLocation.jpeg"
-    },
-    {
-      "id": 4,
-      "name": "Nashville West Location",
-      "address": "808 Fetch Street",
-      "city": "Bellevue",
-      "state": "TN",
-      "picture": "./LocationImages/NashvilleWestLocation.jpeg"
-    },
-    {
-      "name": "asdf",
-      "position": "",
-      "picture": "./location.jpg",
-      "id": 5
+      "picture": "./location.jpg"
     }
   ],
   "employees": [
@@ -77,12 +63,6 @@
       "name": "Finley Tate",
       "phoneNumber": "615-123-4567",
       "picture": "./OwnerImages/Finley-Tate.jpg"
-    },
-    {
-      "name": "asdf",
-      "phoneNumber": "asdf",
-      "picture": "./owner.jpg",
-      "id": 2
     }
   ]
 }

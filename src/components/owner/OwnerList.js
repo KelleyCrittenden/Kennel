@@ -38,7 +38,8 @@ const OwnerList = (props) => {
                           key={owner.id} 
                           owner={owner} 
                           id={owner.id}
-                          deleteOwner={deleteOwner} />)}
+                          deleteOwner={deleteOwner} 
+                          {...props}/>)}
     </div>
     </>
   );

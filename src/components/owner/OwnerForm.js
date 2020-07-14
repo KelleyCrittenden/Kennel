@@ -13,7 +13,7 @@ const OwnerForm = props => {
     setOwner(stateToChange);
   };
 
-            /*  Local method for validation, set loadingStatus, create animal object, invoke the AnimalManager post method, and redirect to the full animal list
+            /*  Local method for validation, set loadingStatus, create owner object, invoke the OwnerManager post method, and redirect to the full owner list
             */
 
             //window alert for empty input fields

@@ -9,10 +9,10 @@ const LocationList = (props) => {
   const [locations, setLocations] = useState([]);
 
 
-//getting all the animals from the API
+//getting all the locations from the API
   const getLocations = () => {
     // After the data comes back from the API, we
-    //  use the setAnimals function to update state
+    //  use the set Locations function to update state
     return LocationManager.getAll().then(locationsFromAPI => {
       setLocations(locationsFromAPI)
     });
@@ -23,13 +23,13 @@ const LocationList = (props) => {
       .then(() => LocationManager.getAll().then(setLocations));
   };
 
-      // got the animals from the API on the component's first render
+      // got the locations from the API on the component's first render
       // react hook function what happens when a change is made to state
   useEffect(() => {
     getLocations();
   }, []);
 
-      // Finally we use map() to "loop over" the animals array to show a list of animal cards
+      // Finally we use map() to "loop over" the locations array to show a list of location cards
   return (
     <>
     <section className="section-content">
@@ -43,9 +43,10 @@ const LocationList = (props) => {
     <div className="container-cards">
       {locations.map(location => <LocationCard 
                               key={location.id} 
-                              location={location} 
+                              locations={location} 
                               id={location.id}
-                              deleteLocation={deleteLocation} />)}
+                              deleteLocation={deleteLocation}
+                              {...props} />)}
     </div>
     </>
   );

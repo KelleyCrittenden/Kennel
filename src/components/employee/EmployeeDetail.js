@@ -17,7 +17,7 @@ const EmployeeDetail = props => {
 
           //3. looks at state and runs return again
   useEffect(() => {
-          //get(id) from AnimalManager and hang on to the data; put it into state
+          //get(id) from Employee Manager and hang on to the data; put it into state
           EmployeeManager.get(props.employeeId)
           .then(employee => {
             setEmployee({
@@ -28,10 +28,10 @@ const EmployeeDetail = props => {
       setIsLoading(false);
           });
       }, [props.employeeId]);
-          //if props.animalId if the ID is ever changed go back and get the updated animal
+          //if props. employeed if the ID is ever changed go back and get the updated employee
 
   const handleDelete = () => {
-            //invoke the delete function in AnimalManger and re-direct to the animal list.
+            //invoke the delete function in employeeManger and re-direct to the employee list.
     setIsLoading(true);
     EmployeeManager.delete(props.employeeId).then(() =>
         props.history.push("/employees")
@@ -39,7 +39,7 @@ const EmployeeDetail = props => {
   };          
 
 
-      //2. Look at AnimalDetail, it's empty so use effect
+      //2. Look at employeeDetail, it's empty so use effect
   return (
     <div className="card">
       <div className="card-content">

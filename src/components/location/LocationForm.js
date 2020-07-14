@@ -13,7 +13,7 @@ const LocationForm = props => {
     setLocation(stateToChange);
   };
 
-            /*  Local method for validation, set loadingStatus, create animal object, invoke the AnimalManager post method, and redirect to the full animal list
+            /*  Local method for validation, set loadingStatus, create location object, invoke the LocationsManager post method, and redirect to the full location list
             */
 
             //window alert for empty input fields
@@ -23,7 +23,7 @@ const LocationForm = props => {
       window.alert("Please input location name, address, city and state");
     } else {
       setIsLoading(true);
-            // Create the employee and redirect user to employee list
+            // Create the location and redirect user to employee list
             LocationManager.post(location)
         .then(() => props.history.push("/locations"));
     }

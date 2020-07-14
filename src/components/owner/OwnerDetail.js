@@ -17,7 +17,7 @@ const OwnerDetail = props => {
 
           //3. looks at state and runs return again
   useEffect(() => {
-          //get(id) from AnimalManager and hang on to the data; put it into state
+          //get(id) from OwnerManager and hang on to the data; put it into state
           OwnerManager.get(props.ownerId).then(owner => {
       setOwner({
         name: owner.name,
@@ -27,10 +27,10 @@ const OwnerDetail = props => {
       setIsLoading(false);
           });
       }, [props.ownerId]);
-          //if props.animalId if the ID is ever changed go back and get the updated animal
+          //if props.OwnerId if the ID is ever changed go back and get the updated owner
 
   const handleDelete = () => {
-            //invoke the delete function in AnimalManger and re-direct to the animal list.
+            //invoke the delete function in OwnerManger and re-direct to the owner list.
     setIsLoading(true);
         OwnerManager.delete(props.ownerId).then(() =>
             props.history.push("/owners")
@@ -38,7 +38,7 @@ const OwnerDetail = props => {
   };          
 
 
-      //2. Look at AnimalDetail, it's empty so use effect
+      //2. Look at OwnerDetail, it's empty so use effect
   return (
     <div className="card">
       <div className="card-content">

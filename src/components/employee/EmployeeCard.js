@@ -22,7 +22,15 @@ const EmployeeCard = (props) => {
         <Link to={`/employees/${props.employee.id}`}>
           <button>Details</button> </Link>
 
-        <button type="button" onClick={() => props.deleteEmployee(props.employee.id)}>Terminate</button>
+        <button 
+          type="button" 
+          onClick={() => props.deleteEmployee(props.employee.id)}>Terminate</button>
+
+        <button 
+          type="button"
+          onClick={() => props.history.push(`/employees/${props.employee.id}/edit`)}>
+          Edit
+        </button>
         
 
       </div>

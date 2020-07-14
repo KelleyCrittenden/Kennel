@@ -9,10 +9,10 @@ const EmployeeList = (props) => {
   const [employees, setEmployees] = useState([]);
 
 
-//getting all the animals from the API
+//getting all the employees from the API
   const getEmployees = () => {
     // After the data comes back from the API, we
-    //  use the setAnimals function to update state
+    //  use the setEmployees function to update state
     return EmployeeManager.getAll().then(employeesFromAPI => {
       setEmployees(employeesFromAPI)
     });
@@ -23,13 +23,13 @@ const EmployeeList = (props) => {
       .then(() => EmployeeManager.getAll().then(setEmployees));
   };
 
-      // got the animals from the API on the component's first render
+      // got the employees from the API on the component's first render
       // react hook function what happens when a change is made to state
   useEffect(() => {
     getEmployees();
   }, []);
 
-      // Finally we use map() to "loop over" the animals array to show a list of animal cards
+      // Finally we use map() to "loop over" the employees array to show a list of employee cards
   return (
     <>
     <section className="section-content">
@@ -45,7 +45,8 @@ const EmployeeList = (props) => {
                               key={employee.id} 
                               employee={employee} 
                               id={employee.id}
-                              deleteEmployee={deleteEmployee} />)}
+                              deleteEmployee={deleteEmployee} 
+                              {...props}/>)}
     </div>
     </>
   );

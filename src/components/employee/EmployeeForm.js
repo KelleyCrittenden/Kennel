@@ -13,7 +13,7 @@ const EmployeeForm = props => {
     setEmployee(stateToChange);
   };
 
-            /*  Local method for validation, set loadingStatus, create animal object, invoke the AnimalManager post method, and redirect to the full animal list
+            /*  Local method for validation, set loadingStatus, create employee object, invoke the EmployeeManager post method, and redirect to the full employee list
             */
 
             //window alert for empty input fields
