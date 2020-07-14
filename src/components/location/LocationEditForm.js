@@ -39,7 +39,7 @@ const LocationEditForm = props => {
         //controlling button so it isn't pressed repeatedly
         setIsLoading(false);
       });
-  }, []);
+  }, [props.match.params.locationId]);
 
         //Number 3. then bounces back to useEffect 
         //Number 5. then runs after useEffect
@@ -89,7 +89,7 @@ const LocationEditForm = props => {
             <label htmlFor="state">State</label>
 
           </div>
-          
+
           <div className="alignRight">
             <button
               type="button" disabled={isLoading}

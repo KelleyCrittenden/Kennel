@@ -12,6 +12,7 @@ import EmployeeList from "./employee/EmployeeList";
 import EmployeeDetail from "./employee/EmployeeDetail";
 import EmployeeForm from './employee/EmployeeForm';
 import EmployeeEditForm from "./employee/EmployeeEditForm";
+import EmployeeWithAnimals from "./employee/EmployeeWithAnimals";
 
 import OwnerList from "./owner/OwnerList";
 import OwnerDetail from "./owner/OwnerDetail";
@@ -216,6 +217,14 @@ const ApplicationViews = () => {
         } else {
           return <Redirect to="/login" />
         }
+      }} 
+    />
+
+    <Route 
+        // Route that looks for employeeId then creates new component looking for animals
+      path="/employees/:employeeId(\d+)/details" 
+      render={(props) => {
+        return <EmployeeWithAnimals {...props} />
       }} 
     />
 

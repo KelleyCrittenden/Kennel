@@ -1,6 +1,5 @@
 import React from "react";
 import "./Employee.css";
-import { Link } from "react-router-dom";
 import {firstLetterCase} from '../../modules/helpers'
 
 //create a card that pulls specific data from the database
@@ -19,8 +18,9 @@ const EmployeeCard = (props) => {
           <span className="card-employeeName">{firstLetterCase(props.employee.name)}</span>
         </h3>
 
-        <Link to={`/employees/${props.employee.id}`}>
-          <button>Details</button> </Link>
+        <button 
+          type="button"
+          onClick={() => { props.history.push(`/employees/${props.employee.id}/details`) }}>Animals</button>
 
         <button 
           type="button" 
@@ -31,6 +31,7 @@ const EmployeeCard = (props) => {
           onClick={() => props.history.push(`/employees/${props.employee.id}/edit`)}>
           Edit
         </button>
+
         
 
       </div>

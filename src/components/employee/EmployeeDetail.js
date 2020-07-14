@@ -43,7 +43,7 @@ const EmployeeDetail = props => {
   return (
     <div className="card">
       <div className="card-content">
-
+            {/* If employee is an empty string, don't run lines */}
          {(employee.picture !== "") &&
           <picture> 
               <img className="employeeImage" src={require (`${employee.picture}`)} alt="Worker" />

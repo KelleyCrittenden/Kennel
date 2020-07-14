@@ -4,37 +4,56 @@
       "id": 1,
       "name": "Doodles",
       "breed": "Poodle",
-      "picture": "./AnimalImages/Toy-Poodle.jpg"
-    },
-    {
-      "id": 2,
-      "name": "Decker",
-      "breed": "German Shepherd",
-      "picture": "./AnimalImages/German-Shepherd.jpeg"
+      "picture": "./AnimalImages/Toy-Poodle.jpg",
+      "employeeId": 3
     },
     {
       "id": 3,
       "name": "Esme",
       "breed": "Pitbull",
-      "picture": "./AnimalImages/Pitbull.jpg"
+      "picture": "./AnimalImages/Pitbull.jpg",
+      "employeeId": 3
+    },
+    {
+      "name": "Bishop",
+      "breed": "Miniature Schnauzer",
+      "picture": "./dog.svg",
+      "employeeId": 1,
+      "id": 4
     }
   ],
   "locations": [
     {
       "id": 1,
       "name": "Nashville North Location",
-      "address": "500 Puppy Lane",
+      "address": "500 Puppy Way",
       "city": "Gallatin",
       "state": "TN",
       "picture": "./LocationImages/NashvilleNorthLocation.jpg"
     },
     {
       "id": 2,
-      "name": "Kelley Crittenden",
-      "address": "1640 Spencer Mill  Road",
-      "city": "Burns",
+      "name": "Nashville East Location",
+      "address": "123 Yappy Lane",
+      "city": "Mt. Juliet",
       "state": "TN",
-      "picture": "./location.jpg"
+      "picture": "./LocationImages/NashvilleEastLocation.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "Nashville South Location",
+      "address": "615 Waggy Tail Road",
+      "city": "Brentwood",
+      "state": "TN",
+      "picture": "./LocationImages/NashvilleSouthLocation.jpeg"
+    },
+    {
+      "id": 4,
+      "name": "Nashville West Location",
+      "address": "808 Fetch Street",
+      "city": "Bellevue",
+      "state": "TN",
+      "picture": "./LocationImages/NashvilleWestLocation.jpeg"
     }
   ],
   "employees": [

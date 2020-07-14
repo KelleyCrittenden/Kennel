@@ -35,6 +35,13 @@ export default {
       },
       body: JSON.stringify(editedEmployee)
     }).then(data => data.json());
+  },
+
+  getWithAnimals(id) {
+      //looking in employees resource, find employee we referred to and go and embed all the animals that have that same employeeid
+    return fetch(`${remoteURL}/employees/${id}?_embed=animals`)
+            .then(result => result.json())
   }
+
 
 }

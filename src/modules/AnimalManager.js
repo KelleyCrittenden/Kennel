@@ -35,5 +35,17 @@ export default {
       },
       body: JSON.stringify(editedAnimal)
     }).then(data => data.json());
+  },
+
+
+      //fetches all the animal, parses result then parsed result gets passed in the next .then as animals, then gives random id, takes that value and looks inside animals and return the animal that matches the animal id that matches the random one
+  getRandomId() {
+    return fetch(`${remoteURL}/animals`)
+      .then(result => result.json())
+      .then(animals => {
+        const randomIndex = Math.floor(Math.random() * animals.length);
+        const randomAnimal = animals[randomIndex];
+        return randomAnimal.id;
+    });
   }
 }
