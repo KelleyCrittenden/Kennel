@@ -4,9 +4,9 @@ import React, { useState } from "react"
 const Login = props => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
 
-  // Update state whenever an input field is edited
-  //whenever a change is made, state is updated with the value
-  //... means spread operator, spread it apart so we can define it, email and password
+        // Update state whenever an input field is edited
+        //whenever a change is made, state is updated with the value
+        //... means spread operator, spread it apart so we can define it, email and password
   const handleFieldChange = (evt) => {
     const stateToChange = { ...credentials };
     stateToChange[evt.target.id] = evt.target.value;
@@ -14,21 +14,22 @@ const Login = props => {
     setCredentials(stateToChange);
   };
 
-  //goes into session storage to set it into the credential state, then we go see the animalList
+        //goes into session storage to set it into the credential state, then we go see the animalList
 
-//what happens when the login button is pressed, going to session storage and plugging in the credentials, once that's in session storage
+        //what happens when the login button is pressed, going to session storage and plugging in the credentials, once that's in session storage
   const handleLogin = (e) => {
       //stops it from refreshing after action of onSubmit
     e.preventDefault();
-    /*
-        For now, just store the email and password that
-        the customer enters into session storage.
-        ...Let's just trust the user... That's a good idea, right????
-    */
-    sessionStorage.setItem(
-      "credentials",
-      JSON.stringify(credentials)
-    );
+                /*
+                    For now, just store the email and password that
+                    the customer enters into session storage.
+                    ...Let's just trust the user... That's a good idea, right????
+                */
+                // sessionStorage.setItem(
+                //   "credentials",
+                //   JSON.stringify(credentials)
+                // );
+    props.setUser(credentials)
     props.history.push("/");
   }
 

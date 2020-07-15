@@ -33,7 +33,8 @@ const LocationWithEmployees = props => {
   return (
     <div className="card">
 
-      <p>Location: {location.name}</p>
+      <h2>{location.name}</h2>
+      <h3>{location.address} {location.city}, {location.state}</h3>
 
         {/* mapping through the employees and grabing ones with matching ids to location chosen */}
       {employees.map(employee =>

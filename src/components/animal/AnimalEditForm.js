@@ -76,7 +76,7 @@ const AnimalEditForm = props => {
               value={animal.breed}
             />
             <label htmlFor="breed">Breed</label>
-          </div>
+          
 
           <label htmlFor="employeeId">Employee </label>
 
@@ -98,6 +98,7 @@ const AnimalEditForm = props => {
         </option>
             )}
         </select>
+        </div>
 
           <div className="alignRight">
             <button
