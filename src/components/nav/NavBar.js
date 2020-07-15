@@ -52,8 +52,9 @@ const NavBar = props => {
             : null}
 
                 {/* Bang negates props: has user not? if its not true then display login, if they are a user display Logout */}
-                {props.hasUser
+          {props.hasUser
             ? <li>
+              {/* link is taking us to a place, so that the URL doesn't change, calls handlelogout functionality, same class name for styling purposes */}
                 <span className="nav-link" onClick={handleLogout}> Logout </span>
               </li>
             : <li>

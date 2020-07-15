@@ -33,11 +33,15 @@ const LocationList = (props) => {
   return (
     <>
     <section className="section-content">
-      <button type="button"
+
+      {props.hasUser
+      ?<button type="button"
         className="btn"
         onClick={() => {props.history.push("/locations/new")}}>
         Add New Location
-     </button>
+      </button>
+      : null }
+
     </section>
     
     <div className="container-cards">

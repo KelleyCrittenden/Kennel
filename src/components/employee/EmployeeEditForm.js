@@ -101,7 +101,10 @@ const EmployeeEditForm = props => {
         </option>
             )}
         </select>
-
+<br>
+</br>
+<br>
+</br>
           <div className="alignRight">
             <button
               type="button" disabled={isLoading}

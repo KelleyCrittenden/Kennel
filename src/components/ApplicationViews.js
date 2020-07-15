@@ -70,12 +70,10 @@ const ApplicationViews = (props) => {
         exact 
         path="/locations" 
         render={props => {
-          if (hasUser) {
-            return <LocationList {...props} />
-          } else {
-            return <Redirect to="/login" />
+              //adding hasUser as conditional to locations page, user is able to see certain information but needs to be logged in to see additional information
+          return <LocationList {...props} hasUser={hasUser}/>
           }
-      }} 
+      } 
       />
 
     <Route
