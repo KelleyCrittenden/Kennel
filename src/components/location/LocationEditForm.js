@@ -6,6 +6,7 @@ import "./LocationForm.css"
 const LocationEditForm = props => {
   const [location, setLocation] = useState({ name: "", address: "", city: "", state: "", picture: "" });
   const [isLoading, setIsLoading] = useState(false);
+  
         //waiting for input into input fields
   const handleFieldChange = evt => {
     const stateToChange = { ...location };

@@ -36,6 +36,12 @@ update(editedLocation) {
     },
     body: JSON.stringify(editedLocation)
   }).then(data => data.json());
+},
+
+getWithEmployees(id) {
+    //looking in locations resource, find location we referred to and go and embed all the employees that have that same locationId
+  return fetch(`${remoteURL}/locations/${id}?_embed=employees`)
+      .then(result => result.json())
 }
 
 }

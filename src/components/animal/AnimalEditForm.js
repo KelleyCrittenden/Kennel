@@ -99,8 +99,6 @@ const AnimalEditForm = props => {
             )}
         </select>
 
-        {/* <label htmlFor="employeeId">Employee</label> */}
-
           <div className="alignRight">
             <button
               type="button" 

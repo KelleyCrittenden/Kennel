@@ -23,6 +23,7 @@ import LocationList from "./location/LocationList";
 import LocationDetail from "./location/LocationDetail";
 import LocationForm from "./location/LocationForm";
 import LocationEditForm from "./location/LocationEditForm";
+import LocationWithEmployees from "./location/LocationWithEmployees"
 
 
 
@@ -225,6 +226,14 @@ const ApplicationViews = () => {
       path="/employees/:employeeId(\d+)/details" 
       render={(props) => {
         return <EmployeeWithAnimals {...props} />
+      }} 
+    />
+
+      <Route 
+        // Route that looks for locationId then creates new component looking for employees
+      path="/locations/:locationId(\d+)/employees" 
+      render={(props) => {
+        return <LocationWithEmployees {...props} />
       }} 
     />
 
