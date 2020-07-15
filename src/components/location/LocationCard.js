@@ -1,7 +1,7 @@
 import React from "react";
 import "./Location.css";
 import {firstLetterCase} from '../../modules/helpers'
-import { Link } from "react-router-dom";
+
 
 //create a card that pulls specific data from the database
 
@@ -19,11 +19,8 @@ const LocationCard = (props) => {
           <span className="card-locationName">{firstLetterCase(props.locations.name)}</span>
         </h3>
 
-        <Link to={`/locations/${props.locations.id}/details`}>
-          <button>Details</button> </Link>
-
         <button type="button"
-        onClick={() => { props.history.push(`/locations/${props.locations.id}/employees`) }}>Employees</button>
+        onClick={() => { props.history.push(`/locations/${props.locations.id}/employees`) }}>Staff</button>
 
         <button 
           type="button" 
