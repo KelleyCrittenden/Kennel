@@ -6,7 +6,7 @@ const NavBar = () => {
   return (
     <header>
       <h1 className="site-title">
-        Student Kennels
+        Waggy Tails Kennels
         <br />
         <small>Loving care when you're not there.</small>
       </h1>
@@ -14,32 +14,42 @@ const NavBar = () => {
         <ul className="container">
 
           <li>
-            <Link className="nav-link" to="/">
+            <Link 
+            className="nav-link" 
+            to="/">
               Home
             </Link>
           </li>
 
           <li>
-            <Link className="nav-link" to="/animals">
+            <Link 
+            className="nav-link" 
+            to="/animals">
               Animals
             </Link>
           </li>
 
           <li>
-              <Link className="nav-link" to="/locations">
-              Locations
+              <Link 
+              className="nav-link" 
+              to="/locations">
+                Locations
               </Link>
             </li>
 
             <li>
-              <Link className="nav-link" to="/employee">
-              Employees
+              <Link 
+              className="nav-link" 
+              to="/employees">
+                Employees
               </Link>
             </li>
 
             <li>
-              <Link className="nav-link" to="/owner">
-              Owner
+              <Link 
+              className="nav-link" 
+              to="/owners">
+                Owners
               </Link>
             </li>
 

@@ -1,20 +1,39 @@
 import React from "react";
 import "./Employee.css";
+import {firstLetterCase} from '../../modules/helpers'
 
 //create a card that pulls specific data from the database
 
 const EmployeeCard = (props) => {
   return (
     <div className="card">
+
       <div className="card-content">
-      <picture>
-          <img src={require (`${props.employee.picture}`)} alt="My Dog" />
+
+        <picture>
+          <img className="employeeImage" src={require (`${props.employee.picture}`)} alt="Worker" />
         </picture>
+
         <h3>
-          Name: <span className="card-employeeName">{props.employee.name}</span>
+          <span className="card-employeeName">{firstLetterCase(props.employee.name)}</span>
         </h3>
-        <p>Position: {props.employee.position}
-        </p>
+
+        <button 
+          type="button"
+          onClick={() => { props.history.push(`/employees/${props.employee.id}/details`) }}>Animals</button>
+
+        <button 
+          type="button" 
+          onClick={() => props.deleteEmployee(props.employee.id)}>Terminate</button>
+
+        <button 
+          type="button"
+          onClick={() => props.history.push(`/employees/${props.employee.id}/edit`)}>
+          Edit
+        </button>
+
+        
+
       </div>
     </div>
   );
