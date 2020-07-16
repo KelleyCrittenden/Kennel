@@ -11,7 +11,7 @@ const EmployeeWithAnimals = props => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleDelete = (id) => {
-        //invoke the delete function in EmployeeManger and re-direct to the employee list.
+        //invoke the delete function in Animal Manger and re-direct.
     setIsLoading(true);
     AnimalManager.delete(id)
     .then(() =>
@@ -38,6 +38,7 @@ const EmployeeWithAnimals = props => {
       <p>Employee: {employee.name}</p>
 
         {/* mapping through the animals and grabing ones with matching ids to employee chosen */}
+        
       {animals.map(animal =>
         <AnimalCard
           key={animal.id}
