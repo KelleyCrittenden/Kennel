@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-//defining component
+        //defining component
 const Login = props => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
 
@@ -10,7 +10,7 @@ const Login = props => {
   const handleFieldChange = (evt) => {
     const stateToChange = { ...credentials };
     stateToChange[evt.target.id] = evt.target.value;
-    //dont merge new state, over ride it, happens everytime a key is pressed
+        //dont merge new state, over ride it, happens everytime a key is pressed
     setCredentials(stateToChange);
   };
 
@@ -18,7 +18,7 @@ const Login = props => {
 
         //what happens when the login button is pressed, going to session storage and plugging in the credentials, once that's in session storage
   const handleLogin = (e) => {
-      //stops it from refreshing after action of onSubmit
+        //stops it from refreshing after action of onSubmit
     e.preventDefault();
                 /*
                     For now, just store the email and password that
@@ -34,8 +34,8 @@ const Login = props => {
   }
 
   return (
-      //action applied to entire form, onSubmit call the function handleLogin
-      //no onClick b/c this version is onSubmit
+        //action applied to entire form, onSubmit call the function handleLogin
+        //no onClick b/c this version is onSubmit
     <form onSubmit={handleLogin}>
       <fieldset>
 

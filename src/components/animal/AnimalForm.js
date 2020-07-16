@@ -1,15 +1,22 @@
+//Empty Form that is created when a user clicks the Add New Animal Button in the Animals page
+
 import React, { useState } from 'react';
 import AnimalManager from '../../modules/AnimalManager';
 import './AnimalForm.css'
 
 const AnimalForm = props => {
+          //setting properties as empty with default image
   const [animal, setAnimal] = useState({ name: "", breed: "", picture: "./dog.svg"});
+          //disabiling buttong while it's loading
   const [isLoading, setIsLoading] = useState(false);
 
-            // An Event that everytime a charector is entered into an input field it is stored into the state of this object, and sets a new state
+            //waiting for User input into input fields, updates animal state everytime a charector is entered
   const handleFieldChange = evt => {
+            //changing props of animal, spreads data array
     const stateToChange = { ...animal };
+            //value of the input fields
     stateToChange[evt.target.id] = evt.target.value;
+            //takes value of stateToChange and sets the Animal as that value
     setAnimal(stateToChange);
   };
 
@@ -17,11 +24,12 @@ const AnimalForm = props => {
             */
   const constructNewAnimal = evt => {
     evt.preventDefault();
+        //if user leaves any field empty, window alert appears
     if (animal.name === "" || animal.breed === "") {
       window.alert("Please input an animal name and breed");
     } else {
       setIsLoading(true);
-            // Create the animal and redirect user to animal list
+            // Create the animal with the API call post(animal) in the AnimalManager and redirect user to animal list
       AnimalManager.post(animal)
         .then(() => props.history.push("/animals"));
     }
