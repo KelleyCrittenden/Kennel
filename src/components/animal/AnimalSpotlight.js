@@ -1,3 +1,5 @@
+//Displays Random Animal on Kennel.js, the main page for the app
+
 import React, { useState, useEffect } from "react";
 import AnimalManager from "../../modules/AnimalManager";
 import "./AnimalSpotlight.css";
